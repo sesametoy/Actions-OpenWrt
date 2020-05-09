@@ -63,10 +63,7 @@ jobs:
         sudo -E apt-get -qq clean
 
     - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-    
-    - name: Checkout tag
-      run: git checkout $REPO_TAG
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH $REPO_TAG openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
