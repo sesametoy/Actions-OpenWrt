@@ -24,7 +24,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  REPO_TAG: 2020408
+  REPO_TAG: 20200408
   CONFIG_FILE: .config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
