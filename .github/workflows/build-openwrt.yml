@@ -24,6 +24,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
+  REPO_TAG: 2020408
   CONFIG_FILE: .config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
@@ -62,7 +63,10 @@ jobs:
         sudo -E apt-get -qq clean
 
     - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH 20200408 openwrt
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+    
+    - name: Checkout tag
+      run: git checkout $REPO_TAG
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
